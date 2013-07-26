@@ -4,7 +4,15 @@
 		{
 			"path": "/home/roderik/Documents/cv",
             "file_exclude_patterns": [
-            "*.pdf"
+            "*.pdf",
+            "*.aux",
+            "*.bbl",
+            "*.blg",
+            "*.fdb_latexmk",
+            "*.log",
+            "*.out",
+            "*.run.xml",
+            "*.sublime-workspace"
             ]
 		}
 	]
