@@ -72,7 +72,7 @@
 
 \newcommand{\header}[3]{%
   \begin{tikzpicture}[remember picture,overlay]
-    \node [rectangle, fill=fillheader, anchor=north, minimum width=\paperwidth, minimum height=4cm] (box) at (current page.north){};
+    \node [rectangle, fill=fillheader, anchor=north, minimum width=1.5\paperwidth, minimum height=4.25cm] (box) at (current page.north){};
     \node [anchor=center] (name) at (box) {%
       \fontsize{40pt}{72pt}\color{header}%
       {\thinfont #1}{\bodyfont  #2}
@@ -97,11 +97,12 @@
   {%
     \color{%
       \ifcase\value{colorCounter}%
-        blue\or%
-        red\or%
-        orange\or%
-        green\or%
-        purple\else%
+        %red\or%
+        %orange\or%
+        %green\or%
+        %blue\or%
+        %purple\else%
+        headercolor\else%
         headercolor\fi%
     } #1#2#3%
   }%
@@ -141,10 +142,10 @@
 }
 \renewcommand{\bfseries}{\headingfont\color{headercolor}}
 \newcommand{\entry}[4]{%
-  #1&\parbox[t]{11.8cm}{%
+  {\addfontfeature{Color=lightgray}#1}&\parbox[t]{11.8cm}{%
     \textbf{#2}%
     \hfill%
-    {\footnotesize\addfontfeature{Color=gray} #3}\\%
+    {\footnotesize\addfontfeature{Color=darkgray} #3}\\%
     #4\vspace{\parsep}%
   }\\ }
 
@@ -161,7 +162,7 @@
   \renewcommand{\section}[1]{
     \par\vspace{\baselineskip}{\Large\headingfont\color{headercolor} ##1}
   }
-  \begin{textblock}{3.6}(1.5, 4.33)
+  \begin{textblock}{3.6}(1.1, 4.43)
   \begin{flushright}
   \obeycr
 }{%
@@ -284,5 +285,5 @@
 % Other tweaks %
 %%%%%%%%%%%%%%%%
 
-\RequirePackage[left=6.1cm,top=2cm,right=1.5cm,bottom=2.0cm,nohead,nofoot]{geometry}
+\RequirePackage[left=5.6cm,top=2cm,right=1.5cm,bottom=1.8cm,nohead,nofoot]{geometry}
 \RequirePackage{hyperref}
